@@ -68,7 +68,7 @@ let dogData = [
     story: 'Owner Passed away'
   },
   {
-    imageURL: './images/mrbubz.jpg',
+    imageURL: '/images/mrbubz.jpg',
     imageDescription: 'A snarling dog with white and brown fur.',
     name: 'Mr.Bubz',
     sex: 'Male',
