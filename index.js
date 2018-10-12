@@ -19,7 +19,7 @@ let catData = [
     story: 'Thrown on the street'
   },
   {
-    imageURL:'images/closecall.jpg', 
+    imageURL:'/images/closecall.jpg', 
     imageDescription: 'Mixed cat being eaten by a stuffed shark.',
     name: 'Close Call',
     sex: 'Male',
@@ -28,7 +28,7 @@ let catData = [
     story: 'Nearly got eaten by a shark. Lost it`s tail. He`s considered an OG on the block.'
   },
   {
-    imageURL:'images/bob.jpg', 
+    imageURL:'/images/bob.jpg', 
     imageDescription: 'Mixed cat with a melon on its head',
     name: 'Bob',
     sex: 'Female',
@@ -37,7 +37,7 @@ let catData = [
     story: 'Bob was found roaming a farmer`s market with a melon bob. She`s got a lot of attitude.'
   },
   {
-    imageURL:'images/moses.jpg', 
+    imageURL:'/images/moses.jpg', 
     imageDescription: 'Mixed cat looking surprised ',
     name: 'Moses',
     sex: 'Male',
@@ -46,7 +46,7 @@ let catData = [
     story: 'Found outside a local church. Claims to speak God.'
   },
   {
-    imageURL:'images/robertdeniro.jpg', 
+    imageURL:'/images/robertdeniro.jpg', 
     imageDescription: 'Grumpy looking snowshoe cat with brown and white fur.',
     name: 'Robert De Niro',
     sex: 'Male',
@@ -68,7 +68,7 @@ let dogData = [
     story: 'Owner Passed away'
   },
   {
-    imageURL: 'images/mrbubz.jpg',
+    imageURL: './images/mrbubz.jpg',
     imageDescription: 'A snarling dog with white and brown fur.',
     name: 'Mr.Bubz',
     sex: 'Male',
@@ -77,7 +77,7 @@ let dogData = [
     story: 'Mr.Bubz walked in on his own accord. He might be an alien.'
   },
   {
-    imageURL: 'images/spike.jpg',
+    imageURL: '/images/spike.jpg',
     imageDescription: 'A grey, white-bellied Pitbull standing on two feet.',
     name: 'Spike',
     sex: 'Male',
@@ -86,7 +86,7 @@ let dogData = [
     story: 'Caught by animal services for chasing alley cats. He`s a grown man.'
   },
   {
-    imageURL: 'images/elastigirl.jpg',
+    imageURL: '/images/elastigirl.jpg',
     imageDescription: 'A grey and white Pitbull with tongue wrapped around face.',
     name: 'Elastigirl',
     sex: 'Female',
@@ -95,7 +95,7 @@ let dogData = [
     story: 'Elastigirl thinks she`s a frog. Found her abandoned by a pond trying to eat flies.'
   }, 
   {
-    imageURL: 'images/lush.jpg',
+    imageURL: '/images/lush.jpg',
     imageDescription: 'A snarling white and brown fur dog.',
     name: 'Mr.Bubz',
     sex: 'Female',
