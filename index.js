@@ -7,8 +7,12 @@ const morgan = require('morgan');
 const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
+const Queue = require('./queue');
 
-let catData = [
+let catQueue = new Queue();
+let dogQueue = new Queue();
+
+const catData = [
   {
     imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg', 
     imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
@@ -57,7 +61,11 @@ let catData = [
 
 ];
 
-let dogData = [
+catData.forEach(cat => {
+  catQueue.enqueue(cat);
+});
+
+const dogData = [
   {
     imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
     imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
@@ -97,13 +105,17 @@ let dogData = [
   {
     imageURL: '/images/lush.jpg',
     imageDescription: 'A snarling white and brown fur dog.',
-    name: 'Mr.Bubz',
+    name: 'Lush',
     sex: 'Female',
     age: 3,
     breed: 'Mixed breed',
     story: 'Found drinking leftover momosas at a local outdoor bar. Known alcoholic looking for a family that likes to have a good time. Makes a great Moscow Mule.'
   }
 ];
+
+dogData.forEach(dog => {
+  dogQueue.enqueue(dog);
+});
 
 const app = express();
 
@@ -120,20 +132,20 @@ app.use(
 );
 
 app.get('/api/cat', (req, res, next) => {
-  res.json(catData[0]);
+  res.json(catQueue.peek());
 });
 
 app.get('/api/dog', (req, res, next) => {
-  res.json(dogData[0]);
+  res.json(dogQueue.peek());
 });
 
 app.delete('/api/cat', (req, res, next) => {
-  catData.shift();
+  catQueue.dequeue();
   res.sendStatus(204);
 });
 
 app.delete('/api/dog', (req, res, next) => {
-  dogData.shift();
+  dogQueue.dequeue();
   res.sendStatus(204);
 });
 
