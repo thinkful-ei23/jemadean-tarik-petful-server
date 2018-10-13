@@ -131,20 +131,20 @@ app.use(
   })
 );
 
-app.get('api/cat', (req, res, next) => {
+app.get('/api/cat', (req, res, next) => {
   res.json(catQueue.peek());
 });
 
-app.get('api/dog', (req, res, next) => {
+app.get('/api/dog', (req, res, next) => {
   res.json(dogQueue.peek());
 });
 
-app.delete('api/cat', (req, res, next) => {
+app.delete('/api/cat', (req, res, next) => {
   catQueue.dequeue();
   res.sendStatus(204);
 });
 
-app.delete('api/dog', (req, res, next) => {
+app.delete('/api/dog', (req, res, next) => {
   dogQueue.dequeue();
   res.sendStatus(204);
 });
